@@ -19,10 +19,74 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11spellingBee.proto\"\x1c\n\x0cStartRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1e\n\rStartResponse\x12\r\n\x05words\x18\x01 \x01(\t\"*\n\x0bWordRequest\x12\x0c\n\x04word\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\t\"A\n\x0cWordResponse\x12\r\n\x05valid\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\t\x12\x13\n\x0btotal_score\x18\x03 \x01(\t2g\n\x0bSpellingBee\x12,\n\tStartGame\x12\r.StartRequest\x1a\x0e.StartResponse\"\x00\x12*\n\tCheckWord\x12\x0c.WordRequest\x1a\r.WordResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x11spellingBee.proto\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\rHelloResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1c\n\x0cStartRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1e\n\rStartResponse\x12\r\n\x05words\x18\x01 \x01(\t\"*\n\x0bWordRequest\x12\x0c\n\x04word\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\t\"A\n\x0cWordResponse\x12\r\n\x05valid\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\t\x12\x13\n\x0btotal_score\x18\x03 \x01(\t2\x9a\x01\n\x0bSpellingBee\x12\x31\n\x0eTestConnection\x12\r.HelloRequest\x1a\x0e.HelloResponse\"\x00\x12,\n\tStartGame\x12\r.StartRequest\x1a\x0e.StartResponse\"\x00\x12*\n\tCheckWord\x12\x0c.WordRequest\x1a\r.WordResponse\"\x00\x62\x06proto3'
 )
 
 
+
+
+_HELLOREQUEST = _descriptor.Descriptor(
+  name='HelloRequest',
+  full_name='HelloRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='HelloRequest.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=21,
+  serialized_end=49,
+)
+
+
+_HELLORESPONSE = _descriptor.Descriptor(
+  name='HelloResponse',
+  full_name='HelloResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='HelloResponse.message', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=51,
+  serialized_end=83,
+)
 
 
 _STARTREQUEST = _descriptor.Descriptor(
@@ -52,8 +116,8 @@ _STARTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21,
-  serialized_end=49,
+  serialized_start=85,
+  serialized_end=113,
 )
 
 
@@ -84,8 +148,8 @@ _STARTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=51,
-  serialized_end=81,
+  serialized_start=115,
+  serialized_end=145,
 )
 
 
@@ -123,8 +187,8 @@ _WORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=83,
-  serialized_end=125,
+  serialized_start=147,
+  serialized_end=189,
 )
 
 
@@ -169,15 +233,31 @@ _WORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=127,
-  serialized_end=192,
+  serialized_start=191,
+  serialized_end=256,
 )
 
+DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
+DESCRIPTOR.message_types_by_name['HelloResponse'] = _HELLORESPONSE
 DESCRIPTOR.message_types_by_name['StartRequest'] = _STARTREQUEST
 DESCRIPTOR.message_types_by_name['StartResponse'] = _STARTRESPONSE
 DESCRIPTOR.message_types_by_name['WordRequest'] = _WORDREQUEST
 DESCRIPTOR.message_types_by_name['WordResponse'] = _WORDRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+HelloRequest = _reflection.GeneratedProtocolMessageType('HelloRequest', (_message.Message,), {
+  'DESCRIPTOR' : _HELLOREQUEST,
+  '__module__' : 'spellingBee_pb2'
+  # @@protoc_insertion_point(class_scope:HelloRequest)
+  })
+_sym_db.RegisterMessage(HelloRequest)
+
+HelloResponse = _reflection.GeneratedProtocolMessageType('HelloResponse', (_message.Message,), {
+  'DESCRIPTOR' : _HELLORESPONSE,
+  '__module__' : 'spellingBee_pb2'
+  # @@protoc_insertion_point(class_scope:HelloResponse)
+  })
+_sym_db.RegisterMessage(HelloResponse)
 
 StartRequest = _reflection.GeneratedProtocolMessageType('StartRequest', (_message.Message,), {
   'DESCRIPTOR' : _STARTREQUEST,
@@ -216,13 +296,23 @@ _SPELLINGBEE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=194,
-  serialized_end=297,
+  serialized_start=259,
+  serialized_end=413,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='TestConnection',
+    full_name='SpellingBee.TestConnection',
+    index=0,
+    containing_service=None,
+    input_type=_HELLOREQUEST,
+    output_type=_HELLORESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
   _descriptor.MethodDescriptor(
     name='StartGame',
     full_name='SpellingBee.StartGame',
-    index=0,
+    index=1,
     containing_service=None,
     input_type=_STARTREQUEST,
     output_type=_STARTRESPONSE,
@@ -232,7 +322,7 @@ _SPELLINGBEE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CheckWord',
     full_name='SpellingBee.CheckWord',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_WORDREQUEST,
     output_type=_WORDRESPONSE,

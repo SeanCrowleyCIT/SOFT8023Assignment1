@@ -14,6 +14,11 @@ class SpellingBeeStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.TestConnection = channel.unary_unary(
+                '/SpellingBee/TestConnection',
+                request_serializer=spellingBee__pb2.HelloRequest.SerializeToString,
+                response_deserializer=spellingBee__pb2.HelloResponse.FromString,
+                )
         self.StartGame = channel.unary_unary(
                 '/SpellingBee/StartGame',
                 request_serializer=spellingBee__pb2.StartRequest.SerializeToString,
@@ -29,21 +34,32 @@ class SpellingBeeStub(object):
 class SpellingBeeServicer(object):
     """Missing associated documentation comment in .proto file."""
 
+    def TestConnection(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('TestConnection not implemented!')
+
     def StartGame(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
-        raise NotImplementedError('StartGame')
+        raise NotImplementedError('StartGame not implemented!')
 
     def CheckWord(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
-        raise NotImplementedError('CheckWord')
+        raise NotImplementedError('CheckWord not implemented!')
 
 
 def add_SpellingBeeServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'TestConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.TestConnection,
+                    request_deserializer=spellingBee__pb2.HelloRequest.FromString,
+                    response_serializer=spellingBee__pb2.HelloResponse.SerializeToString,
+            ),
             'StartGame': grpc.unary_unary_rpc_method_handler(
                     servicer.StartGame,
                     request_deserializer=spellingBee__pb2.StartRequest.FromString,
@@ -63,6 +79,23 @@ def add_SpellingBeeServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class SpellingBee(object):
     """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def TestConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/SpellingBee/TestConnection',
+            spellingBee__pb2.HelloRequest.SerializeToString,
+            spellingBee__pb2.HelloResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def StartGame(request,

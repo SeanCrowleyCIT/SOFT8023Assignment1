@@ -1,8 +1,17 @@
 syntax = "proto3";
 
 service SpellingBee {
+    rpc TestConnection(HelloRequest) returns (HelloResponse) {}
     rpc StartGame(StartRequest) returns (StartResponse) {}
     rpc CheckWord(WordRequest) returns (WordResponse) {}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    string message = 1;
 }
 
 message StartRequest {

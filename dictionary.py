@@ -2,14 +2,22 @@ import grpc
 import json
 from random import randint
 
-class wordDictionary():
+class wordDictionary:
+    __instance__ = None
 
     def __init__(self):
         self.pangrams = {}
 
         with open("words_dictionary.json") as json_file:
             self.pangrams = json.load(json_file)
-            #print(self.pangrams)
+            print(self.pangrams)
+
+    @staticmethod
+    def get_instance():
+        if not wordDictionary.__instance__ is None:
+            wordDictionary()
+        return wordDictionary.__instance__
+
 
     def get_selection(self):
         rand_num = randint(0, len(self.pangrams))
@@ -23,5 +31,3 @@ class wordDictionary():
             return True
         else:
             return False
-
-wordDictionary()
