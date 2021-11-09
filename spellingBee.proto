@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+service SpellingBee {
+    rpc StartGame(StartRequest) returns (StartResponse) {}
+    rpc CheckWord(WordRequest) returns (WordResponse) {}
+}
+
+message StartRequest {
+    string name = 1;
+}
+
+message StartResponse {
+    string words = 1;
+}
+
+message WordRequest {
+    string word = 1;
+    string score = 2;
+}
+
+message WordResponse {
+    string valid  = 1;
+    string score = 2;
+    string total_score = 3;
+}

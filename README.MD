@@ -1,0 +1,1 @@
+I have employed the singltopn design patter in my dictionary class. We only ever need 1 instance of this therfore I felt it was most appropriate.
